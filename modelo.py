@@ -1,5 +1,5 @@
 import streamlit as st
-#import seaborn as sns
+import seaborn
 from sklearn.pipeline import Pipeline
 from sklearn.base import BaseEstimator, TransformerMixin
 import matplotlib.pyplot as plt
@@ -12,7 +12,7 @@ import pickle
 "Existen registros de datos de los pasajes del Titanic y sus caracteristicas"
 "Tomando como referencia estas caracteristicas queremos calcular que le hubiese"
 "pasado a un hipotetico pasajero inventado."
-titanic = sns.load_dataset('titanic')
+titanic = seaborn.load_dataset('titanic')
 
 "Aqui tenemos un ejemplo de la informacion cruda disponible."
 
@@ -50,11 +50,11 @@ titanic_filtrado
 "por ejemplo en el registro 5 la persona no tiene dato de edad"
 "visualicemos con un mapa de calor cuantos datos faltan en cada columna"
 
-"""
+
 fig = plt.figure(figsize=(10, 4))
-sns.heatmap(titanic_filtrado.isna(), cbar=False)
+seaborn.heatmap(titanic_filtrado.isna(), cbar=False)
 st.pyplot(fig)
-"""
+
 
 "Vemos que el problema esta solamente en la columna age. En este caso tenemos tres opciones tipicas."
 "Podemos descartar los registros sin datos (perderiamos parte relevante de la informacion), podriamos"
