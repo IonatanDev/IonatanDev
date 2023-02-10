@@ -1,5 +1,5 @@
 import streamlit as st
-import seaborn as sns
+#import seaborn as sns
 from sklearn.pipeline import Pipeline
 from sklearn.base import BaseEstimator, TransformerMixin
 import matplotlib.pyplot as plt
@@ -50,10 +50,11 @@ titanic_filtrado
 "por ejemplo en el registro 5 la persona no tiene dato de edad"
 "visualicemos con un mapa de calor cuantos datos faltan en cada columna"
 
-
+"""
 fig = plt.figure(figsize=(10, 4))
 sns.heatmap(titanic_filtrado.isna(), cbar=False)
 st.pyplot(fig)
+"""
 
 "Vemos que el problema esta solamente en la columna age. En este caso tenemos tres opciones tipicas."
 "Podemos descartar los registros sin datos (perderiamos parte relevante de la informacion), podriamos"
